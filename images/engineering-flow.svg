@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none" role="img" aria-label="Animated full-stack, machine learning, and IoT engineering architecture">
+  <defs>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fffcf7"/>
+      <stop offset="100%" stop-color="#edf3f1"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#174c51"/>
+      <stop offset="100%" stop-color="#0d2c30"/>
+    </linearGradient>
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#123c40" fill-opacity="0.11"/>
+    </pattern>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#123c40" flood-opacity="0.10"/>
+    </filter>
+    <path id="pathTopLeft" d="M 158 112 C 214 112, 218 180, 266 180"/>
+    <path id="pathBotLeft" d="M 158 248 C 214 248, 218 180, 266 180"/>
+    <path id="pathTopRight" d="M 374 180 C 422 180, 426 112, 482 112"/>
+    <path id="pathBotRight" d="M 374 180 C 422 180, 426 248, 482 248"/>
+  </defs>
+
+  <style>
+    .float-slow { animation: floatY 5.5s ease-in-out infinite; }
+    .float-delay { animation: floatY 5.5s ease-in-out 1.4s infinite; }
+    .spin-cw { transform-origin: 320px 180px; animation: spinCW 26s linear infinite; }
+    .spin-ccw { transform-origin: 320px 180px; animation: spinCCW 18s linear infinite; }
+    .dash-flow { stroke-dasharray: 6 7; animation: dashMove 1.6s linear infinite; }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes spinCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes dashMove {
+      to { stroke-dashoffset: -26; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .float-slow, .float-delay, .spin-cw, .spin-ccw, .dash-flow {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- Base Surface -->
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#cardGrad)" stroke="#ddd6c8" stroke-width="1.5"/>
+  <rect x="14" y="14" width="612" height="332" rx="16" fill="url(#dotGrid)"/>
+
+  <!-- Subtle Aura behind Center Hub -->
+  <circle cx="320" cy="180" r="88" fill="#123c40" fill-opacity="0.04"/>
+  <circle cx="320" cy="180" r="78" stroke="#123c40" stroke-opacity="0.18" stroke-width="1.25" stroke-dasharray="5 7" class="spin-cw"/>
+  <circle cx="320" cy="180" r="64" stroke="#d97706" stroke-opacity="0.32" stroke-width="1.25" stroke-dasharray="18 10 4 10" class="spin-ccw"/>
+
+  <!-- Connection Paths -->
+  <use href="#pathTopLeft" stroke="#123c40" stroke-opacity="0.22" stroke-width="2" class="dash-flow"/>
+  <use href="#pathBotLeft" stroke="#123c40" stroke-opacity="0.22" stroke-width="2" class="dash-flow"/>
+  <use href="#pathTopRight" stroke="#123c40" stroke-opacity="0.25" stroke-width="2" class="dash-flow"/>
+  <use href="#pathBotRight" stroke="#123c40" stroke-opacity="0.25" stroke-width="2" class="dash-flow"/>
+
+  <!-- Animated Data Packets along Paths -->
+  <circle r="4.5" fill="#d97706">
+    <animateMotion dur="2.8s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#pathTopLeft"/>
+    </animateMotion>
+  </circle>
+  <circle r="4.5" fill="#123c40">
+    <animateMotion dur="3.1s" begin="0.8s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#pathBotLeft"/>
+    </animateMotion>
+  </circle>
+  <circle r="4.5" fill="#123c40">
+    <animateMotion dur="2.8s" begin="0.4s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#pathTopRight"/>
+    </animateMotion>
+  </circle>
+  <circle r="4.5" fill="#d97706">
+    <animateMotion dur="3.1s" begin="1.2s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#pathBotRight"/>
+    </animateMotion>
+  </circle>
+
+  <!-- Top-Left Node: Web & API -->
+  <g class="float-slow" filter="url(#softShadow)">
+    <rect x="26" y="74" width="134" height="76" rx="16" fill="#ffffff" stroke="#d8d0c2" stroke-width="1.2"/>
+    <rect x="40" y="90" width="28" height="28" rx="8" fill="#e5efee"/>
+    <path d="M49 100 L45 104 L49 108 M59 100 L63 104 L59 108 M55.5 98 L52.5 110" stroke="#123c40" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="76" y="102" fill="#1c1915" font-family="Segoe UI, Manrope, sans-serif" font-size="11.5" font-weight="700">Python</text>
+    <text x="76" y="116" fill="#5c564e" font-family="Segoe UI, Manrope, sans-serif" font-size="10" font-weight="600">Flask · Django</text>
+    <rect x="40" y="129" width="106" height="6" rx="3" fill="#efeae1"/>
+    <rect x="40" y="129" width="66" height="6" rx="3" fill="#123c40">
+      <animate attributeName="width" values="42;92;42" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Bottom-Left Node: Data & SQL -->
+  <g class="float-delay" filter="url(#softShadow)">
+    <rect x="26" y="210" width="134" height="76" rx="16" fill="#ffffff" stroke="#d8d0c2" stroke-width="1.2"/>
+    <rect x="40" y="226" width="28" height="28" rx="8" fill="#fef3c7"/>
+    <ellipse cx="54" cy="234" rx="7.5" ry="3" stroke="#b45309" stroke-width="1.7"/>
+    <path d="M46.5 234 V244 C46.5 245.7 49.9 247 54 247 C58.1 247 61.5 245.7 61.5 244 V234" stroke="#b45309" stroke-width="1.7"/>
+    <text x="76" y="238" fill="#1c1915" font-family="Segoe UI, Manrope, sans-serif" font-size="11.5" font-weight="700">SQL Data</text>
+    <text x="76" y="252" fill="#5c564e" font-family="Segoe UI, Manrope, sans-serif" font-size="10" font-weight="600">MySQL · SQLite</text>
+    <rect x="40" y="265" width="106" height="6" rx="3" fill="#efeae1"/>
+    <rect x="40" y="265" width="76" height="6" rx="3" fill="#d97706">
+      <animate attributeName="width" values="48;96;48" dur="4.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Center Core Hub -->
+  <g filter="url(#softShadow)">
+    <circle cx="320" cy="180" r="52" fill="url(#tealGrad)"/>
+    <circle cx="320" cy="180" r="52" stroke="#f6f3ec" stroke-opacity="0.22" stroke-width="2"/>
+    <circle cx="320" cy="180" r="52" stroke="#123c40" stroke-width="1.5" fill="none" opacity="0.5">
+      <animate attributeName="r" values="52;68;52" dur="3.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.45;0;0.45" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="303" y="156" width="34" height="24" rx="6" stroke="#f6f3ec" stroke-width="1.9"/>
+    <path d="M312 168 L317 173 L328 162" stroke="#fbbf24" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="320" y="198" text-anchor="middle" fill="#f6f3ec" font-family="Segoe UI, Manrope, sans-serif" font-size="11" font-weight="700" letter-spacing="0.06em">SYSTEMS</text>
+  </g>
+
+  <!-- Top-Right Node: ML Vision -->
+  <g class="float-delay" filter="url(#softShadow)">
+    <rect x="480" y="74" width="134" height="76" rx="16" fill="#ffffff" stroke="#d8d0c2" stroke-width="1.2"/>
+    <rect x="494" y="90" width="28" height="28" rx="8" fill="#e5efee"/>
+    <circle cx="504" cy="100" r="2.2" fill="#123c40"/>
+    <circle cx="512" cy="100" r="2.2" fill="#123c40"/>
+    <circle cx="508" cy="109" r="2.2" fill="#d97706"/>
+    <path d="M504 100 L512 100 L508 109 Z" stroke="#123c40" stroke-width="1.3"/>
+    <text x="530" y="102" fill="#1c1915" font-family="Segoe UI, Manrope, sans-serif" font-size="11.5" font-weight="700">ML &amp; CNN</text>
+    <text x="530" y="116" fill="#5c564e" font-family="Segoe UI, Manrope, sans-serif" font-size="10" font-weight="600">TensorFlow</text>
+    <path d="M494 133 H516 L522 126 L528 137 L534 129 L540 133 H600" stroke="#123c40" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="105" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="105;0;105" dur="3.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Bottom-Right Node: IoT Hardware -->
+  <g class="float-slow" filter="url(#softShadow)">
+    <rect x="480" y="210" width="134" height="76" rx="16" fill="#ffffff" stroke="#d8d0c2" stroke-width="1.2"/>
+    <rect x="494" y="226" width="28" height="28" rx="8" fill="#e5efee"/>
+    <rect x="503" y="235" width="10" height="10" rx="2" stroke="#123c40" stroke-width="1.6"/>
+    <path d="M508 231 V235 M508 245 V249 M499 240 H503 M513 240 H517" stroke="#d97706" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="530" y="238" fill="#1c1915" font-family="Segoe UI, Manrope, sans-serif" font-size="11.5" font-weight="700">ESP32 IoT</text>
+    <text x="530" y="252" fill="#5c564e" font-family="Segoe UI, Manrope, sans-serif" font-size="10" font-weight="600">Real-Time</text>
+    <rect x="496" y="269" width="10" height="6" rx="2" fill="#123c40" fill-opacity="0.35"/>
+    <rect x="510" y="265" width="10" height="10" rx="2" fill="#123c40" fill-opacity="0.6"/>
+    <rect x="524" y="261" width="10" height="14" rx="2" fill="#123c40">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="538" y="263" width="10" height="12" rx="2" fill="#d97706">
+      <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="592" cy="268" r="4" fill="#16a34a">
+      <animate attributeName="opacity" values="1;0.35;1" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
